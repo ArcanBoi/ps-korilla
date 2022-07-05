@@ -6,19 +6,32 @@ function Records(props) {
     props.info.order;
   const [payStatus, setPayStatus] = useState(paid);
   const payTicket = () => {
-    setPayStatus(!paid);
+    console.log({ paid });
+    setPayStatus(true);
   };
 
   return (
     <div className="order-ticket" onClick={payTicket}>
       <h1>{person}</h1>
       <ul>
-        <li>Main: {main}</li>
-        <li>Protein: {protein}</li>
-        <li>Rice: {rice}</li>
-        <li>Sauce: {sauce}</li>
-        <li>Toppings: {toppings.join(", ")}</li>
-        <li>Drink: {drink}</li>
+        <li>
+          <strong>Main:</strong> <span>{main}</span>
+        </li>
+        <li>
+          <strong>Protein:</strong> <span>{protein}</span>
+        </li>
+        <li>
+          <strong>Rice:</strong> <span>{rice}</span>
+        </li>
+        <li>
+          <strong>Sauce:</strong> <span>{sauce}</span>
+        </li>
+        <li>
+          <strong>Toppings:</strong> <span>{toppings.join(", ")}</span>
+        </li>
+        <li>
+          <strong>Drink:</strong> <span>{drink}</span>
+        </li>
       </ul>
       <h2 className="order-cost">${cost}</h2>
     </div>

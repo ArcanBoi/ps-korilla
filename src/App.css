@@ -24,7 +24,9 @@ body {
 }
 
 .order-ticket {
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
   cursor: pointer;
   position: relative;
   background-color: white;
@@ -37,6 +39,10 @@ body {
   box-shadow: 2px 2px 5px hsla(0,0%,0%,0.1);
 }
 
+.order-cost {
+  justify-self: flex-end;
+}
+
 .order-ticket.paid{
   outline: 2px solid lime;
 }
@@ -44,4 +50,14 @@ body {
 .order-ticket ul {
   list-style-type: none;
   padding-left: 0;
+}
+
+.order-ticket ul li {
+  display: flex;
+  justify-content: space-between;
+  margn-bottom: 0.5em;
+}
+.order-ticket ul li *:last-child {
+  max-width: 15ch;
+  text-align: right;
 }
